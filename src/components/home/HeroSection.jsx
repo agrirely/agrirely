@@ -43,18 +43,18 @@ export default function HeroSection() {
             {description}
           </p>
 
-          <div className="animate-fade-up delay-3 mt-6 grid w-full grid-cols-2 gap-2.5 sm:mt-10 sm:flex sm:w-auto sm:flex-wrap sm:items-center sm:gap-4">
+          <div className="animate-fade-up delay-3 mt-6 grid w-full grid-cols-2 gap-2.5 sm:mt-10 sm:flex sm:w-auto sm:flex-wrap sm:items-center sm:gap-5 lg:gap-6">
             <Button
               href="/contact-us"
               variant="primary"
-              className="w-full !px-3 !py-2.5 !text-[13px] !bg-accent !text-brand-deep !shadow-[0_12px_32px_rgba(127,195,80,0.35)] hover:!bg-accent-soft sm:!px-5 sm:!py-3 sm:!text-sm"
+              className="w-full !px-3 !py-2.5 !text-[13px] !bg-accent !text-brand-deep !shadow-[0_12px_32px_rgba(127,195,80,0.35)] hover:!bg-accent-soft sm:w-auto sm:!px-5 sm:!py-3 sm:!text-sm"
             >
               Contact Us
             </Button>
             <Button
               href="/about-us"
               variant="secondary"
-              className="w-full !px-3 !py-2.5 !text-[13px] !border-white/35 !bg-white/10 !text-white hover:!bg-white/20 sm:!px-5 sm:!py-3 sm:!text-sm"
+              className="w-full !px-3 !py-2.5 !text-[13px] !border-white/35 !bg-white/10 !text-white hover:!bg-white/20 sm:w-auto sm:!px-5 sm:!py-3 sm:!text-sm"
             >
               Discover AgriRely
             </Button>

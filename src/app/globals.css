@@ -71,6 +71,18 @@
   }
 }
 
+@keyframes soft-glow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
 .animate-fade-up {
   animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -86,6 +98,10 @@
 .animate-draw-line {
   transform-origin: left center;
   animation: draw-line 1s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+
+.animate-soft-glow {
+  animation: soft-glow 10s ease-in-out infinite;
 }
 
 .delay-1 {

@@ -5,7 +5,7 @@ export const homeContent = {
       title: "AgriRely",
       tagline: "Source Fresh – Deliver Fresh",
       description:
-        "Connecting crop producers and consumers worldwide through integrated capabilities in origination, trading, processing, and distribution — while offering farmer services and risk management solutions.",
+        "Connecting producers and markets worldwide through origination, trading, processing, and distribution — built for freshness at every step.",
     },
   
     whoWeAre: {

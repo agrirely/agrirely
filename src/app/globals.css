@@ -147,3 +147,20 @@ h3,
 .font-display {
   font-family: var(--font-fraunces), serif;
 }
+
+.capabilities-swiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.capabilities-swiper .swiper-pagination-bullet {
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.28);
+  opacity: 1;
+}
+
+.capabilities-swiper .swiper-pagination-bullet-active {
+  width: 18px;
+  border-radius: 999px;
+  background: #7fc350;
+}

@@ -7,18 +7,18 @@ export default function HeroSection() {
   const { title, tagline, description } = homeContent.hero;
 
   return (
-    <section className="relative isolate flex min-h-[calc(78svh-4rem)] overflow-hidden text-white sm:min-h-[calc(100svh-4.75rem)]">
+    <section className="relative isolate flex min-h-[calc(78svh-4rem)] overflow-hidden bg-background text-white sm:min-h-[calc(100svh-4.75rem)]">
       <Image
         src={HERO_IMAGE}
         alt="Fresh agricultural fields at sunrise"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[center_40%] animate-ken-burns"
+        className="object-cover object-[center_40%] animate-ken-burns will-change-transform"
       />
 
-      {/* Mobile: stronger bottom wash for readable type */}
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,28,52,0.45)_0%,rgba(12,28,52,0.72)_48%,rgba(12,28,52,0.9)_100%)] sm:hidden" />
+      {/* Mobile: stronger wash, soft fade into next section (no hard bottom edge) */}
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,28,52,0.45)_0%,rgba(12,28,52,0.72)_42%,rgba(12,28,52,0.82)_68%,rgba(12,28,52,0.35)_88%,transparent_100%)] sm:hidden" />
       {/* Desktop atmospheric wash — unchanged */}
       <div className="absolute inset-0 hidden bg-[linear-gradient(100deg,rgba(12,28,52,0.82)_0%,rgba(12,28,52,0.55)_42%,rgba(12,28,52,0.18)_72%,rgba(12,28,52,0.08)_100%)] sm:block" />
       <div className="absolute inset-0 hidden bg-[linear-gradient(to_top,rgba(12,28,52,0.55)_0%,transparent_42%)] sm:block" />
@@ -62,8 +62,9 @@ export default function HeroSection() {
         </div>
       </div>
 
+      {/* Soft handoff into Who We Are — covers any 1px seam */}
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-background to-transparent sm:h-24"
+        className="pointer-events-none absolute -bottom-px inset-x-0 h-20 bg-gradient-to-t from-background from-20% via-background/70 to-transparent sm:h-24"
         aria-hidden
       />
     </section>

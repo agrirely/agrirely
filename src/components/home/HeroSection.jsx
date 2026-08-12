@@ -3,13 +3,14 @@ import Button from "@/components/ui/Button";
 import { homeContent } from "@/data/homeContent";
 import { HERO_IMAGE } from "@/lib/constants";
 
-export default function HeroSection() {
-  const { title, tagline, description } = homeContent.hero;
+export default function HeroSection({ data }) {
+  const { title, tagline, description, image } = data ?? homeContent.hero;
+  const imageSrc = image || HERO_IMAGE;
 
   return (
     <section className="relative isolate flex min-h-[calc(78svh-4rem)] overflow-hidden bg-background text-white sm:min-h-[calc(100svh-4.75rem)]">
       <Image
-        src={HERO_IMAGE}
+        src={imageSrc}
         alt="Fresh agricultural fields at sunrise"
         fill
         priority

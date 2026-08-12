@@ -1,9 +1,10 @@
 import ReadMoreText from "@/components/ui/ReadMoreText";
 import { homeContent } from "@/data/homeContent";
 
-export default function PhilosophySection() {
-  const { heading, title, description, description2 } = homeContent.philosophy;
-  const promise = homeContent.ourPromise;
+export default function PhilosophySection({ data }) {
+  const content = data ?? homeContent;
+  const { heading, title, description, description2 } = content.philosophy;
+  const promise = content.ourPromise;
 
   return (
     <section className="relative overflow-hidden bg-[linear-gradient(120deg,#14233a_0%,#1a3f73_38%,#4f86c6_72%,#7fc350_100%)] text-white">

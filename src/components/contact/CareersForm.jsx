@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "@/components/ui/Button";
+import { submitInquiry } from "@/lib/submitInquiry";
 
 const initialState = {
   name: "",
@@ -13,6 +14,8 @@ const initialState = {
 
 export default function CareersForm({ note }) {
   const [form, setForm] = useState(initialState);
+  const [status, setStatus] = useState("idle");
+  const [error, setError] = useState("");
 
   function handleChange(event) {
     const { name, value, files } = event.target;
@@ -22,9 +25,26 @@ export default function CareersForm({ note }) {
     }));
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    setForm(initialState);
+    setStatus("loading");
+    setError("");
+
+    try {
+      await submitInquiry("careers", {
+        name: form.name,
+        email: form.email,
+        role: form.role,
+        note: form.note,
+        resumeName: form.resume?.name || "",
+      });
+      setForm(initialState);
+      setStatus("success");
+      event.target.reset();
+    } catch (err) {
+      setError(err?.message || "Something went wrong. Please try again.");
+      setStatus("error");
+    }
   }
 
   return (
@@ -86,12 +106,20 @@ export default function CareersForm({ note }) {
         placeholder="Tell us briefly about your experience"
       />
 
+      {status === "success" ? (
+        <p className="text-sm font-medium text-brand">
+          Application submitted. We&apos;ll review your profile soon.
+        </p>
+      ) : null}
+      {error ? <p className="text-sm font-medium text-red-600">{error}</p> : null}
+
       <div className="pt-1">
         <Button
           type="submit"
-          className="w-full !bg-accent !px-6 !py-3.5 !text-brand-deep !shadow-[0_12px_28px_rgba(127,195,80,0.28)] hover:!bg-accent-soft sm:w-auto"
+          disabled={status === "loading"}
+          className="w-full !bg-accent !px-6 !py-3.5 !text-brand-deep !shadow-[0_12px_28px_rgba(127,195,80,0.28)] hover:!bg-accent-soft disabled:opacity-60 sm:w-auto"
         >
-          Submit Application
+          {status === "loading" ? "Submitting..." : "Submit Application"}
         </Button>
       </div>
     </form>

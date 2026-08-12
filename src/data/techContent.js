@@ -13,6 +13,8 @@ export const techContent = {
         "The company deploys and advocates the use of digital tools such as artificial intelligence, sensors, drones, and automation to enable data-driven decision-making. These technologies optimize the use of critical resources such as water and fertilizers, improve productivity, and increase crop yields, delivering tangible benefits to farmers.",
       description2:
         "AgriRely's overarching objective is to build a more resilient, efficient, and sustainable food system by transforming traditional agriculture into a technology-enabled, data-driven industry.",
+      image:
+        "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=2400&q=80",
     },
   
     farmerEquipment: {

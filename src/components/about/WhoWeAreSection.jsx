@@ -3,8 +3,9 @@ import ReadMoreText from "@/components/ui/ReadMoreText";
 import { aboutContent } from "@/data/aboutContent";
 import { ABOUT_IMAGE } from "@/lib/constants";
 
-export default function WhoWeAreSection() {
-  const { hero, offices, intro } = aboutContent;
+export default function WhoWeAreSection({ data }) {
+  const { hero, offices, intro } = data ?? aboutContent;
+  const imageSrc = intro?.image || ABOUT_IMAGE;
 
   return (
     <section className="relative isolate overflow-hidden">
@@ -80,7 +81,7 @@ export default function WhoWeAreSection() {
 
             <div className="animate-fade-up delay-2 relative aspect-[16/9] w-full overflow-hidden lg:max-h-[13.5rem]">
               <Image
-                src={ABOUT_IMAGE}
+                src={imageSrc}
                 alt="Fresh crops prepared for global agricultural trade"
                 fill
                 priority

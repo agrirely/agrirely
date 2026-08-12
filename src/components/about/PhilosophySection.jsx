@@ -3,9 +3,9 @@ import { aboutContent } from "@/data/aboutContent";
 
 const delays = ["delay-1", "delay-2", "delay-3"];
 
-export default function PhilosophySection() {
+export default function PhilosophySection({ data }) {
   const { heading, title, description, description2, pillars } =
-    aboutContent.philosophy;
+    data ?? aboutContent.philosophy;
 
   return (
     <section className="relative overflow-hidden bg-brand-deep text-white sm:bg-[linear-gradient(120deg,#14233a_0%,#1a3f73_38%,#4f86c6_72%,#7fc350_100%)]">

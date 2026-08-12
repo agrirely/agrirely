@@ -6,8 +6,8 @@ const locationItems = [
   { label: "Corporate HQ", key: "corporateHQ" },
 ];
 
-export default function ReachUsSection() {
-  const { hero, reachUs } = contactContent;
+export default function ReachUsSection({ data }) {
+  const { hero, reachUs } = data ?? contactContent;
 
   return (
     <section className="relative isolate overflow-hidden">

@@ -1,9 +1,9 @@
 import Button from "@/components/ui/Button";
 import { homeContent } from "@/data/homeContent";
 
-export default function CtaSection() {
+export default function CtaSection({ data }) {
   const { heading, description, buttonText, buttonLink, email } =
-    homeContent.cta;
+    data ?? homeContent.cta;
 
   return (
     <section className="relative overflow-hidden">

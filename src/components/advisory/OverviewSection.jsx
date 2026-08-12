@@ -4,8 +4,9 @@ import { ABOUT_IMAGE } from "@/lib/constants";
 
 const audienceSignals = ["Farmers", "Traders", "Buyers", "FPOs"];
 
-export default function OverviewSection() {
-  const { hero } = advisoryContent;
+export default function OverviewSection({ data }) {
+  const { hero } = data ?? advisoryContent;
+  const imageSrc = hero?.image || ABOUT_IMAGE;
 
   return (
     <section className="relative isolate overflow-hidden">
@@ -59,7 +60,7 @@ export default function OverviewSection() {
 
             <div className="animate-fade-up delay-2 relative aspect-[16/9] w-full overflow-hidden lg:max-h-[13.5rem]">
               <Image
-                src={ABOUT_IMAGE}
+                src={imageSrc}
                 alt="Expert agricultural advisory across the value chain"
                 fill
                 priority

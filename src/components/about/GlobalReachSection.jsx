@@ -3,9 +3,9 @@ import { aboutContent } from "@/data/aboutContent";
 
 const delays = ["delay-1", "delay-2", "delay-3"];
 
-export default function GlobalReachSection() {
+export default function GlobalReachSection({ data }) {
   const { heading, description, description2, highlights } =
-    aboutContent.globalReach;
+    data ?? aboutContent.globalReach;
 
   return (
     <section className="relative overflow-hidden bg-surface">

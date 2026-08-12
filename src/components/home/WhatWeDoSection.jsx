@@ -3,14 +3,15 @@ import { homeContent } from "@/data/homeContent";
 
 const delays = ["delay-1", "delay-2", "delay-3"];
 
-export default function WhatWeDoSection() {
+export default function WhatWeDoSection({ data }) {
+  const content = data ?? homeContent;
   const { heading, description, description2, description3 } =
-    homeContent.whatWeDo;
+    content.whatWeDo;
   const {
     heading: modelHeading,
     description: modelDescription,
     highlights,
-  } = homeContent.tradingHighlights;
+  } = content.tradingHighlights;
 
   return (
     <section className="relative overflow-hidden bg-brand-deep text-white">

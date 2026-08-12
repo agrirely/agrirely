@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import ReadMoreText from "@/components/ui/ReadMoreText";
 import { techContent } from "@/data/techContent";
 
-export default function TradingPlatformSection() {
+export default function TradingPlatformSection({ data }) {
   const { heading, description, keyAttributes, closingNote } =
-    techContent.tradingPlatform;
+    data ?? techContent.tradingPlatform;
   const [activeIndex, setActiveIndex] = useState(0);
   const active = keyAttributes[activeIndex];
   const tabRefs = useRef([]);

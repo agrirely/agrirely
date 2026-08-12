@@ -5,8 +5,10 @@ import { HERO_IMAGE } from "@/lib/constants";
 
 const techSignals = ["AI & Sensors", "Drones", "Automation", "Data-driven"];
 
-export default function OverviewSection() {
-  const { hero, overview } = techContent;
+export default function OverviewSection({ data }) {
+  const content = data ?? techContent;
+  const { hero, overview } = content;
+  const imageSrc = overview?.image || HERO_IMAGE;
 
   return (
     <section className="relative isolate overflow-hidden">
@@ -43,7 +45,7 @@ export default function OverviewSection() {
           <div className="mt-4 grid items-center gap-4 sm:mt-6 sm:gap-6 lg:mt-7 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
             <div className="animate-fade-up delay-2 order-1 relative aspect-[16/10] w-full overflow-hidden sm:aspect-[16/9] sm:delay-2 lg:order-2 lg:max-h-[13.5rem]">
               <Image
-                src={HERO_IMAGE}
+                src={imageSrc}
                 alt="Technology-enabled farming across the agricultural value chain"
                 fill
                 priority

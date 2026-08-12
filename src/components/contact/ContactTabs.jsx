@@ -15,8 +15,8 @@ const formById = {
   supplier: SupplierForm,
 };
 
-export default function ContactTabs() {
-  const { heading, tabs } = contactContent.otherWaysToConnect;
+export default function ContactTabs({ data }) {
+  const { heading, tabs } = data ?? contactContent.otherWaysToConnect;
   const [activeId, setActiveId] = useState(tabs[0]?.id ?? "msg");
   const activeTab = tabs.find((tab) => tab.id === activeId) ?? tabs[0];
   const ActiveForm = formById[activeTab?.id] ?? MessageForm;

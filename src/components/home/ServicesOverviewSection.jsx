@@ -4,10 +4,11 @@ import { homeContent } from "@/data/homeContent";
 
 const delays = ["delay-1", "delay-2", "delay-3"];
 
-export default function ServicesOverviewSection() {
-  const { heading, subheading, services } = homeContent.servicesOverview;
-  const tech = homeContent.techHighlight;
-  const advisory = homeContent.advisoryHighlight;
+export default function ServicesOverviewSection({ data }) {
+  const content = data ?? homeContent;
+  const { heading, subheading, services } = content.servicesOverview;
+  const tech = content.techHighlight;
+  const advisory = content.advisoryHighlight;
 
   return (
     <section className="relative overflow-hidden bg-surface">

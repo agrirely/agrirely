@@ -6,9 +6,9 @@ import { aboutContent } from "@/data/aboutContent";
 
 const delays = ["delay-1", "delay-2", "delay-3", "delay-4"];
 
-export default function WhatWeDoSection() {
+export default function WhatWeDoSection({ data }) {
   const { heading, description, description2, description3, capabilities } =
-    aboutContent.whatWeDo;
+    data ?? aboutContent.whatWeDo;
 
   return (
     <section className="relative overflow-hidden bg-brand-deep text-white">

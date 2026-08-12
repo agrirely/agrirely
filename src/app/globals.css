@@ -2,17 +2,17 @@
 
 :root {
   /* Logo-based palette: Agri lime/leaf + Rely blue */
-  --background: #f3f7fb;
+  --background: #f1f6fb;
   --foreground: #14233a;
   --muted: #5a6d82;
   --surface: #ffffff;
   --surface-soft: #e7f1fb;
-  --brand: #4f86c6;
+  --brand: #4a90e2;
   --brand-deep: #1a3f73;
-  --brand-mid: #6b9fd4;
-  --accent: #7fc350;
-  --accent-soft: #e0e666;
-  --sky: #a9dff9;
+  --brand-mid: #6ba8e8;
+  --accent: #8bc83a;
+  --accent-soft: #d4e157;
+  --sky: #94c4f0;
   --line: rgba(26, 63, 115, 0.12);
 }
 
@@ -122,9 +122,9 @@
 
 .grain {
   background-image:
-    radial-gradient(ellipse at 18% 8%, rgba(127, 195, 80, 0.14), transparent 48%),
-    radial-gradient(ellipse at 88% 78%, rgba(79, 134, 198, 0.12), transparent 46%),
-    linear-gradient(180deg, #f3f7fb 0%, #eaf2f8 100%);
+    radial-gradient(ellipse at 18% 8%, rgba(139, 200, 58, 0.14), transparent 48%),
+    radial-gradient(ellipse at 88% 78%, rgba(74, 144, 226, 0.12), transparent 46%),
+    linear-gradient(180deg, #f1f6fb 0%, #eaf2f8 100%);
 }
 
 .section-pad {
@@ -162,5 +162,5 @@ h3,
 .capabilities-swiper .swiper-pagination-bullet-active {
   width: 18px;
   border-radius: 999px;
-  background: #7fc350;
+  background: #8bc83a;
 }

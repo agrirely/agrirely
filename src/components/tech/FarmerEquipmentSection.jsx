@@ -8,8 +8,9 @@ const stages = [
   "Harvesting",
 ];
 
-export default function FarmerEquipmentSection() {
-  const { heading, description, description2 } = techContent.farmerEquipment;
+export default function FarmerEquipmentSection({ data }) {
+  const { heading, description, description2 } =
+    data ?? techContent.farmerEquipment;
 
   return (
     <section className="relative overflow-hidden bg-brand-deep text-white">

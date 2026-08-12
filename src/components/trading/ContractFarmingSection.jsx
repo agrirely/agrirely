@@ -7,8 +7,9 @@ const highlights = [
   "Assured offtake",
 ];
 
-export default function ContractFarmingSection() {
-  const { heading, description, description2 } = tradingContent.contractFarming;
+export default function ContractFarmingSection({ data }) {
+  const { heading, description, description2 } =
+    data ?? tradingContent.contractFarming;
 
   return (
     <section className="relative overflow-hidden bg-brand-deep text-white">

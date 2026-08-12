@@ -6,6 +6,8 @@ export const homeContent = {
       tagline: "Source Fresh – Deliver Fresh",
       description:
         "Connecting producers and markets worldwide through origination, trading, processing, and distribution — built for freshness at every step.",
+      image:
+        "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=2400&q=80",
     },
   
     whoWeAre: {
@@ -14,6 +16,8 @@ export const homeContent = {
         "AgriRely is a horticulture and agro-commodity market linkage company with offices in Delhi NCR, Pune, and Mumbai. We connect crop producers and consumers worldwide through our integrated capabilities in origination, trading, processing, and distribution, while also offering farmer services and risk management solutions.",
       description2:
         "Operating through a globally integrated platform, we source, store, trade, process, and distribute a diverse range of crops. Our operations span continents, ensuring that agricultural commodities move seamlessly from regions of surplus to markets of demand.",
+      image:
+        "https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=1600&q=80",
     },
   
     whatWeDo: {

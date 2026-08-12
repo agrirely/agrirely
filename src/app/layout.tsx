@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { Fraunces, Outfit } from "next/font/google";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -31,9 +29,7 @@ export default function RootLayout({
       className={`${outfit.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );

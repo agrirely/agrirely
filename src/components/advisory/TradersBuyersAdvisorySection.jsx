@@ -3,10 +3,10 @@ import { advisoryContent } from "@/data/advisoryContent";
 
 const delays = ["delay-1", "delay-2", "delay-3", "delay-4"];
 
-export default function TradersBuyersAdvisorySection() {
-  const { heading, description, services } =
-    advisoryContent.tradersBuyersAdvisory;
-  const { closingNote } = advisoryContent;
+export default function TradersBuyersAdvisorySection({ data }) {
+  const content = data ?? advisoryContent;
+  const { heading, description, services } = content.tradersBuyersAdvisory;
+  const { closingNote } = content;
 
   return (
     <section className="relative overflow-hidden bg-surface">

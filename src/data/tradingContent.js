@@ -13,6 +13,8 @@ export const tradingContent = {
         "AgriRely connects crop producers and consumers worldwide through its integrated capabilities in origination, trading, processing, and distribution. Operating on a globally integrated platform, we source, store, trade, process, and distribute a diverse range of agricultural commodities and value-added agri products. Our multi-continent presence ensures the efficient movement of commodities from regions of surplus to markets of demand.",
       description2:
         "AgriRely follows a three-pronged trading model designed to ensure deep market penetration and extensive reach.",
+      image:
+        "https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=1600&q=80",
     },
   
     globalTrading: {

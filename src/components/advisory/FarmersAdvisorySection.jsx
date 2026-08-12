@@ -3,8 +3,9 @@ import { advisoryContent } from "@/data/advisoryContent";
 
 const delays = ["delay-1", "delay-2", "delay-3", "delay-4"];
 
-export default function FarmersAdvisorySection() {
-  const { heading, description, services } = advisoryContent.farmersAdvisory;
+export default function FarmersAdvisorySection({ data }) {
+  const { heading, description, services } =
+    data ?? advisoryContent.farmersAdvisory;
 
   return (
     <section className="relative overflow-hidden bg-brand-deep text-white">

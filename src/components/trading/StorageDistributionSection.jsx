@@ -1,9 +1,9 @@
 import ReadMoreText from "@/components/ui/ReadMoreText";
 import { tradingContent } from "@/data/tradingContent";
 
-export default function StorageDistributionSection() {
+export default function StorageDistributionSection({ data }) {
   const { heading, storage, distribution } =
-    tradingContent.storageDistribution;
+    data ?? tradingContent.storageDistribution;
 
   const blocks = [storage, distribution];
 

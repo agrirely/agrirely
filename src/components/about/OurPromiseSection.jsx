@@ -5,8 +5,9 @@ import { SITE_EMAIL } from "@/lib/constants";
 
 const promisePoints = ["Trusted", "Transparent", "Sustainable"];
 
-export default function OurPromiseSection() {
-  const { heading, description, description2 } = aboutContent.ourPromise;
+export default function OurPromiseSection({ data }) {
+  const { heading, description, description2 } =
+    data ?? aboutContent.ourPromise;
 
   return (
     <section className="relative overflow-hidden">

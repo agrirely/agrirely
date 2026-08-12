@@ -5,8 +5,10 @@ import { ABOUT_IMAGE } from "@/lib/constants";
 
 const delays = ["delay-1", "delay-2", "delay-3"];
 
-export default function TradingSection() {
-  const { hero, trading, globalTrading, domesticTrading } = tradingContent;
+export default function TradingSection({ data }) {
+  const { hero, trading, globalTrading, domesticTrading } =
+    data ?? tradingContent;
+  const imageSrc = trading?.image || ABOUT_IMAGE;
 
   return (
     <section className="relative isolate overflow-hidden">
@@ -57,7 +59,7 @@ export default function TradingSection() {
 
             <div className="animate-fade-up delay-2 relative aspect-[16/9] w-full overflow-hidden lg:max-h-[13.5rem]">
               <Image
-                src={ABOUT_IMAGE}
+                src={imageSrc}
                 alt="Agricultural commodities prepared for global trade"
                 fill
                 priority

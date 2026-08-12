@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "@/components/ui/Button";
+import { submitInquiry } from "@/lib/submitInquiry";
 
 const initialState = {
   company: "",
@@ -14,15 +15,27 @@ const initialState = {
 
 export default function SupplierForm({ note }) {
   const [form, setForm] = useState(initialState);
+  const [status, setStatus] = useState("idle");
+  const [error, setError] = useState("");
 
   function handleChange(event) {
     const { name, value } = event.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    setForm(initialState);
+    setStatus("loading");
+    setError("");
+
+    try {
+      await submitInquiry("supplier", form);
+      setForm(initialState);
+      setStatus("success");
+    } catch (err) {
+      setError(err?.message || "Something went wrong. Please try again.");
+      setStatus("error");
+    }
   }
 
   return (
@@ -89,12 +102,20 @@ export default function SupplierForm({ note }) {
         placeholder="Capacity, certifications, or how you'd like to partner"
       />
 
+      {status === "success" ? (
+        <p className="text-sm font-medium text-brand">
+          Inquiry submitted. We&apos;ll review and get in touch.
+        </p>
+      ) : null}
+      {error ? <p className="text-sm font-medium text-red-600">{error}</p> : null}
+
       <div className="pt-1">
         <Button
           type="submit"
-          className="w-full !bg-accent !px-6 !py-3.5 !text-brand-deep !shadow-[0_12px_28px_rgba(127,195,80,0.28)] hover:!bg-accent-soft sm:w-auto"
+          disabled={status === "loading"}
+          className="w-full !bg-accent !px-6 !py-3.5 !text-brand-deep !shadow-[0_12px_28px_rgba(127,195,80,0.28)] hover:!bg-accent-soft disabled:opacity-60 sm:w-auto"
         >
-          Submit Inquiry
+          {status === "loading" ? "Submitting..." : "Submit Inquiry"}
         </Button>
       </div>
     </form>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { contactContent } from "@/data/contactContent";
 
 const locationItems = [
@@ -8,6 +9,8 @@ const locationItems = [
 
 export default function ReachUsSection({ data }) {
   const { hero, reachUs } = data ?? contactContent;
+  const heroImage = hero?.image || "/images/contact/hero.jpg";
+  const reachImage = reachUs?.image || "/images/contact/reach-us.jpg";
 
   return (
     <section className="relative isolate overflow-hidden">
@@ -37,13 +40,35 @@ export default function ReachUsSection({ data }) {
               className="animate-draw-line mt-3 h-[3px] w-14 bg-brand sm:mt-3.5 sm:w-16"
               aria-hidden
             />
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted sm:mt-3.5 sm:text-base">
+          </div>
+
+          <div className="mt-5 grid items-center gap-5 sm:mt-6 sm:gap-6 lg:mt-7 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+            <p className="animate-fade-up delay-1 max-w-2xl text-sm leading-relaxed text-muted sm:text-base">
               {hero.description}
             </p>
+
+            <div className="animate-fade-up delay-2 relative aspect-[16/9] w-full overflow-hidden">
+              <Image
+                src={heroImage}
+                alt="Talking with AgriRely about products, services, and partnership"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover object-center"
+              />
+              <div
+                className="absolute inset-0 bg-[linear-gradient(160deg,rgba(26,63,115,0.1)_0%,transparent_42%,rgba(26,63,115,0.38)_100%)]"
+                aria-hidden
+              />
+              <div
+                className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-accent via-brand to-transparent"
+                aria-hidden
+              />
+            </div>
           </div>
 
           <div className="mt-8 border-t border-line pt-7 sm:mt-10 sm:pt-8 lg:mt-12 lg:pt-9">
-            <div className="animate-fade-up delay-1 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
+            <div className="animate-fade-up delay-1 grid items-center gap-5 sm:gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
                   Locations
@@ -55,17 +80,35 @@ export default function ReachUsSection({ data }) {
                   className="animate-draw-line mt-3.5 h-[3px] w-16 bg-brand"
                   aria-hidden
                 />
+                <a
+                  href={`mailto:${reachUs.email}`}
+                  className="group mt-4 inline-flex items-center gap-2 text-sm font-medium text-brand transition hover:text-brand-deep sm:mt-5"
+                >
+                  <span
+                    className="h-px w-5 bg-brand/40 transition group-hover:w-8 group-hover:bg-accent"
+                    aria-hidden
+                  />
+                  {reachUs.email}
+                </a>
               </div>
-              <a
-                href={`mailto:${reachUs.email}`}
-                className="group inline-flex items-center gap-2 text-sm font-medium text-brand transition hover:text-brand-deep sm:pb-1"
-              >
-                <span
-                  className="h-px w-5 bg-brand/40 transition group-hover:w-8 group-hover:bg-accent"
+
+              <div className="relative aspect-[16/9] w-full overflow-hidden">
+                <Image
+                  src={reachImage}
+                  alt="AgriRely offices and global presence"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover object-center"
+                />
+                <div
+                  className="absolute inset-0 bg-[linear-gradient(160deg,rgba(26,63,115,0.1)_0%,transparent_42%,rgba(26,63,115,0.38)_100%)]"
                   aria-hidden
                 />
-                {reachUs.email}
-              </a>
+                <div
+                  className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-accent via-brand to-transparent"
+                  aria-hidden
+                />
+              </div>
             </div>
 
             <div className="mt-6 grid gap-3 sm:mt-8 sm:grid-cols-3 sm:gap-4">

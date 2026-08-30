@@ -1,10 +1,12 @@
+import Image from "next/image";
 import ReadMoreText from "@/components/ui/ReadMoreText";
 import { homeContent } from "@/data/homeContent";
 
 export default function PhilosophySection({ data }) {
   const content = data ?? homeContent;
-  const { heading, title, description, description2 } = content.philosophy;
+  const { heading, title, description, description2, image } = content.philosophy;
   const promise = content.ourPromise;
+  const imageSrc = image || "/images/home/philosophy.jpg";
 
   return (
     <section className="relative overflow-hidden bg-[linear-gradient(120deg,#14233a_0%,#1a3f73_38%,#4f86c6_72%,#7fc350_100%)] text-white">
@@ -45,7 +47,26 @@ export default function PhilosophySection({ data }) {
             />
           </div>
 
-          {/* Mobile promise panel */}
+          <div className="animate-fade-up delay-1 relative aspect-[16/9] w-full overflow-hidden">
+            <Image
+              src={imageSrc}
+              alt="Freshly harvested produce capturing Source Fresh, Deliver Fresh"
+              fill
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              className="object-cover object-center"
+            />
+            <div
+              className="absolute inset-0 bg-[linear-gradient(160deg,rgba(20,35,58,0.12)_0%,transparent_42%,rgba(20,35,58,0.42)_100%)]"
+              aria-hidden
+            />
+            <div
+              className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-accent-soft via-accent to-transparent"
+              aria-hidden
+            />
+          </div>
+        </div>
+
+        <div className="mx-auto mt-6 w-full max-w-7xl sm:mt-8">
           <div className="animate-fade-up delay-1 relative min-w-0 overflow-hidden bg-white/8 px-4 py-5 sm:hidden">
             <div
               className="absolute bottom-0 left-0 top-0 w-[3px] bg-gradient-to-b from-accent-soft via-accent to-transparent"
@@ -68,23 +89,16 @@ export default function PhilosophySection({ data }) {
             />
           </div>
 
-          {/* Tablet + desktop promise (desktop layout unchanged) */}
-          <div className="animate-fade-up delay-1 relative hidden min-w-0 border-t border-white/15 pt-6 pl-0 sm:block sm:pl-6 lg:border-l lg:border-t-0 lg:border-white/20 lg:pl-10 lg:pt-0">
-            <div
-              className="absolute bottom-0 left-0 top-0 w-[3px] bg-gradient-to-b from-accent-soft via-accent to-transparent lg:hidden"
-              aria-hidden
-            />
-            <div className="sm:pl-0 lg:pl-0">
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent-soft">
-                {promise.heading}
-              </p>
-              <p className="mt-3 font-display text-xl leading-snug tracking-tight sm:text-2xl">
-                {promise.description}
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-white/65">
-                {promise.description2}
-              </p>
-            </div>
+          <div className="animate-fade-up delay-1 relative hidden min-w-0 border-t border-white/15 pt-6 sm:block">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent-soft">
+              {promise.heading}
+            </p>
+            <p className="mt-3 font-display text-xl leading-snug tracking-tight sm:text-2xl">
+              {promise.description}
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-white/65">
+              {promise.description2}
+            </p>
           </div>
         </div>
       </div>

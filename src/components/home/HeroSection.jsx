@@ -1,17 +1,16 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import { homeContent } from "@/data/homeContent";
-import { HERO_IMAGE } from "@/lib/constants";
 
 export default function HeroSection({ data }) {
   const { title, tagline, description, image } = data ?? homeContent.hero;
-  const imageSrc = image || HERO_IMAGE;
+  const imageSrc = image || "/images/home/hero.jpg";
 
   return (
     <section className="relative isolate flex min-h-[calc(78svh-4rem)] overflow-hidden bg-background text-white sm:min-h-[calc(100svh-4.75rem)]">
       <Image
         src={imageSrc}
-        alt="Fresh agricultural fields at sunrise"
+        alt="Sunrise over fresh horticulture fields"
         fill
         priority
         sizes="100vw"

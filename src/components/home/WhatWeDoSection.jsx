@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ReadMoreText from "@/components/ui/ReadMoreText";
 import { homeContent } from "@/data/homeContent";
 
@@ -5,8 +6,9 @@ const delays = ["delay-1", "delay-2", "delay-3"];
 
 export default function WhatWeDoSection({ data }) {
   const content = data ?? homeContent;
-  const { heading, description, description2, description3 } =
+  const { heading, description, description2, description3, image } =
     content.whatWeDo;
+  const imageSrc = image || "/images/home/what-we-do.jpg";
   const {
     heading: modelHeading,
     description: modelDescription,
@@ -29,7 +31,7 @@ export default function WhatWeDoSection({ data }) {
       />
 
       <div className="relative px-5 py-9 sm:px-8 sm:py-11 lg:px-10 lg:py-12">
-        <div className="mx-auto grid w-full max-w-7xl gap-5 sm:gap-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-12">
+        <div className="mx-auto grid w-full max-w-7xl gap-5 sm:gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-12">
           <div className="animate-fade-up max-w-lg">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent-soft">
               Capabilities
@@ -49,7 +51,27 @@ export default function WhatWeDoSection({ data }) {
             />
           </div>
 
-          <div className="animate-fade-up delay-1 grid gap-3 text-sm leading-relaxed text-white/70 sm:gap-3 sm:text-base lg:grid-cols-1 lg:pt-6">
+          <div className="animate-fade-up delay-1 relative aspect-[16/9] w-full overflow-hidden">
+            <Image
+              src={imageSrc}
+              alt="Agricultural commodities moving through a global supply chain"
+              fill
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              className="object-cover object-center"
+            />
+            <div
+              className="absolute inset-0 bg-[linear-gradient(160deg,rgba(20,35,58,0.12)_0%,transparent_42%,rgba(20,35,58,0.42)_100%)]"
+              aria-hidden
+            />
+            <div
+              className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-accent via-accent-soft to-transparent"
+              aria-hidden
+            />
+          </div>
+        </div>
+
+        <div className="mx-auto mt-6 w-full max-w-7xl sm:mt-8">
+          <div className="animate-fade-up delay-1 grid gap-3 text-sm leading-relaxed text-white/70 sm:gap-3 sm:text-base">
             <ReadMoreText
               text={description2}
               wordLimit={18}

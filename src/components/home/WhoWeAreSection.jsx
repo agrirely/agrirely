@@ -1,7 +1,6 @@
 import Image from "next/image";
 import ReadMoreText from "@/components/ui/ReadMoreText";
 import { homeContent } from "@/data/homeContent";
-import { ABOUT_IMAGE } from "@/lib/constants";
 
 const delays = ["delay-1", "delay-2", "delay-3", "delay-4"];
 
@@ -9,7 +8,7 @@ export default function WhoWeAreSection({ data }) {
   const content = data ?? homeContent;
   const { heading, description, description2, image } = content.whoWeAre;
   const { stats, heading: reachHeading } = content.globalReach;
-  const imageSrc = image || ABOUT_IMAGE;
+  const imageSrc = image || "/images/home/who-we-are.jpg";
 
   return (
     <section className="relative overflow-hidden">
@@ -48,13 +47,13 @@ export default function WhoWeAreSection({ data }) {
             />
           </div>
 
-          <div className="animate-fade-up delay-1 relative aspect-[16/9] w-full overflow-hidden sm:aspect-[16/10] sm:max-w-none lg:mx-0 lg:max-h-[16rem]">
+          <div className="animate-fade-up delay-1 relative aspect-[16/9] w-full overflow-hidden sm:aspect-[16/10]">
             <Image
               src={imageSrc}
-              alt="Fresh crops prepared for global agricultural trade"
+              alt="Fresh horticulture produce linking farms to global markets"
               fill
               sizes="(max-width: 1024px) 100vw, 42vw"
-              className="object-cover"
+              className="object-cover object-center"
             />
             <div
               className="absolute inset-0 bg-[linear-gradient(160deg,rgba(26,63,115,0.08)_0%,transparent_40%,rgba(26,63,115,0.35)_100%)]"

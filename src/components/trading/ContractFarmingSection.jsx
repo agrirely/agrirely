@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ReadMoreText from "@/components/ui/ReadMoreText";
 import { tradingContent } from "@/data/tradingContent";
 
@@ -8,8 +9,9 @@ const highlights = [
 ];
 
 export default function ContractFarmingSection({ data }) {
-  const { heading, description, description2 } =
+  const { heading, description, description2, image } =
     data ?? tradingContent.contractFarming;
+  const imageSrc = image || "/images/trading/contract-farming.jpg";
 
   return (
     <section className="relative overflow-hidden bg-brand-deep text-white">
@@ -27,7 +29,7 @@ export default function ContractFarmingSection({ data }) {
       />
 
       <div className="relative px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
-        <div className="mx-auto grid w-full max-w-7xl gap-5 sm:gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-12">
+        <div className="mx-auto grid w-full max-w-7xl gap-5 sm:gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:gap-12">
           <div className="animate-fade-up max-w-lg">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent-soft">
               Farmer partnership
@@ -63,14 +65,32 @@ export default function ContractFarmingSection({ data }) {
             </ul>
           </div>
 
-          <div className="animate-fade-up delay-1 lg:pt-6">
-            <ReadMoreText
-              text={description2}
-              wordLimit={28}
-              tone="light"
-              className="text-sm leading-relaxed text-white/70 sm:text-base"
+          <div className="animate-fade-up delay-1 relative aspect-[16/9] w-full overflow-hidden lg:max-h-[13.5rem]">
+            <Image
+              src={imageSrc}
+              alt="Farmers and agronomists working together in a contract farming field"
+              fill
+              sizes="(max-width: 1024px) 100vw, 40vw"
+              className="object-cover"
+            />
+            <div
+              className="absolute inset-0 bg-[linear-gradient(160deg,rgba(20,35,58,0.12)_0%,transparent_42%,rgba(20,35,58,0.42)_100%)]"
+              aria-hidden
+            />
+            <div
+              className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-accent via-accent-soft to-transparent"
+              aria-hidden
             />
           </div>
+        </div>
+
+        <div className="mx-auto mt-6 w-full max-w-7xl sm:mt-8 lg:mt-10">
+          <ReadMoreText
+            text={description2}
+            wordLimit={28}
+            tone="light"
+            className="animate-fade-up delay-2 max-w-4xl text-sm leading-relaxed text-white/70 sm:text-base"
+          />
         </div>
       </div>
     </section>

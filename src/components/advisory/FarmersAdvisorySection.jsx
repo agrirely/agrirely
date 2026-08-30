@@ -1,11 +1,13 @@
+import Image from "next/image";
 import ReadMoreText from "@/components/ui/ReadMoreText";
 import { advisoryContent } from "@/data/advisoryContent";
 
 const delays = ["delay-1", "delay-2", "delay-3", "delay-4"];
 
 export default function FarmersAdvisorySection({ data }) {
-  const { heading, description, services } =
+  const { heading, description, services, image } =
     data ?? advisoryContent.farmersAdvisory;
+  const imageSrc = image || "/images/advisory/farmers.jpg";
 
   return (
     <section className="relative overflow-hidden bg-brand-deep text-white">
@@ -24,23 +26,43 @@ export default function FarmersAdvisorySection({ data }) {
 
       <div className="relative px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
         <div className="mx-auto w-full max-w-7xl">
-          <div className="animate-fade-up max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent-soft">
-              For growers
-            </p>
-            <h2 className="mt-2.5 font-display text-[1.75rem] leading-[0.95] tracking-tight sm:text-4xl lg:text-[2.6rem]">
-              {heading}
-            </h2>
-            <div
-              className="animate-draw-line mt-3.5 h-[3px] w-16 bg-gradient-to-r from-accent via-accent-soft to-transparent"
-              aria-hidden
-            />
-            <ReadMoreText
-              text={description}
-              wordLimit={22}
-              tone="light"
-              className="mt-4 max-w-2xl text-sm leading-relaxed text-white/75 sm:mt-5 sm:text-base"
-            />
+          <div className="animate-fade-up grid items-center gap-5 sm:gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+            <div className="max-w-3xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent-soft">
+                For growers
+              </p>
+              <h2 className="mt-2.5 font-display text-[1.75rem] leading-[0.95] tracking-tight sm:text-4xl lg:text-[2.6rem]">
+                {heading}
+              </h2>
+              <div
+                className="animate-draw-line mt-3.5 h-[3px] w-16 bg-gradient-to-r from-accent via-accent-soft to-transparent"
+                aria-hidden
+              />
+              <ReadMoreText
+                text={description}
+                wordLimit={22}
+                tone="light"
+                className="mt-4 max-w-2xl text-sm leading-relaxed text-white/75 sm:mt-5 sm:text-base"
+              />
+            </div>
+
+            <div className="relative aspect-[16/9] w-full overflow-hidden">
+              <Image
+                src={imageSrc}
+                alt="Agronomist sharing crop and soil guidance with farmers in the field"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover object-[center_20%]"
+              />
+              <div
+                className="absolute inset-0 bg-[linear-gradient(160deg,rgba(20,35,58,0.12)_0%,transparent_42%,rgba(20,35,58,0.42)_100%)]"
+                aria-hidden
+              />
+              <div
+                className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-accent via-accent-soft to-transparent"
+                aria-hidden
+              />
+            </div>
           </div>
 
           <div className="mt-8 sm:mt-10 lg:mt-12">

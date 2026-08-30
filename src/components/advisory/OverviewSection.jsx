@@ -1,12 +1,11 @@
 import Image from "next/image";
 import { advisoryContent } from "@/data/advisoryContent";
-import { ABOUT_IMAGE } from "@/lib/constants";
 
 const audienceSignals = ["Farmers", "Traders", "Buyers", "FPOs"];
 
 export default function OverviewSection({ data }) {
   const { hero } = data ?? advisoryContent;
-  const imageSrc = hero?.image || ABOUT_IMAGE;
+  const imageSrc = hero?.image || "/images/advisory/hero.jpg";
 
   return (
     <section className="relative isolate overflow-hidden">
@@ -61,7 +60,7 @@ export default function OverviewSection({ data }) {
             <div className="animate-fade-up delay-2 relative aspect-[16/9] w-full overflow-hidden lg:max-h-[13.5rem]">
               <Image
                 src={imageSrc}
-                alt="Expert agricultural advisory across the value chain"
+                alt="Agronomist advising a farmer on crop production and market access"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 40vw"

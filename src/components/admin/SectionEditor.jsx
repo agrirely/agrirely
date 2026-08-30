@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import ImageUploadField from "@/components/admin/ImageUploadField";
-import { ABOUT_IMAGE, HERO_IMAGE } from "@/lib/constants";
+import { ABOUT_IMAGE } from "@/lib/constants";
 
 function humanizeKey(key) {
   return String(key)
@@ -13,12 +13,26 @@ function humanizeKey(key) {
 
 /** Sections that should always expose an ImageKit upload field */
 const SECTION_IMAGE_DEFAULTS = {
-  "home/hero": HERO_IMAGE,
-  "home/whoWeAre": ABOUT_IMAGE,
+  "home/hero": "/images/home/hero.jpg",
+  "home/whoWeAre": "/images/home/who-we-are.jpg",
+  "home/whatWeDo": "/images/home/what-we-do.jpg",
+  "home/philosophy": "/images/home/philosophy.jpg",
   "about-us/intro": ABOUT_IMAGE,
-  "trading-services/trading": ABOUT_IMAGE,
-  "agri-farmer-tech/overview": HERO_IMAGE,
-  "advisory-services/hero": ABOUT_IMAGE,
+  "trading-services/trading": "/images/trading/trading.jpg",
+  "trading-services/contractFarming": "/images/trading/contract-farming.jpg",
+  "trading-services/storageDistribution":
+    "/images/trading/storage-distribution.jpg",
+  "trading-services/processingPackaging":
+    "/images/trading/processing-packaging.jpg",
+  "agri-farmer-tech/overview": "/images/tech/overview.jpg",
+  "agri-farmer-tech/farmerEquipment": "/images/tech/equipment.jpg",
+  "agri-farmer-tech/tradingPlatform": "/images/tech/trading-platform.jpg",
+  "advisory-services/hero": "/images/advisory/hero.jpg",
+  "advisory-services/farmersAdvisory": "/images/advisory/farmers.jpg",
+  "advisory-services/tradersBuyersAdvisory":
+    "/images/advisory/traders-buyers.jpg",
+  "contact-us/hero": "/images/contact/hero.jpg",
+  "contact-us/reachUs": "/images/contact/reach-us.jpg",
 };
 
 function ensureSectionImageField(pageKey, sectionKey, data) {

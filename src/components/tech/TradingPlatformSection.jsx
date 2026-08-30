@@ -1,12 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import ReadMoreText from "@/components/ui/ReadMoreText";
 import { techContent } from "@/data/techContent";
 
 export default function TradingPlatformSection({ data }) {
-  const { heading, description, keyAttributes, closingNote } =
+  const { heading, description, keyAttributes, closingNote, image } =
     data ?? techContent.tradingPlatform;
+  const imageSrc = image || "/images/tech/trading-platform.jpg";
   const [activeIndex, setActiveIndex] = useState(0);
   const active = keyAttributes[activeIndex];
   const tabRefs = useRef([]);
@@ -40,22 +42,42 @@ export default function TradingPlatformSection({ data }) {
 
       <div className="relative px-5 py-8 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
         <div className="mx-auto w-full max-w-7xl">
-          <div className="animate-fade-up max-w-3xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent sm:text-xs sm:tracking-[0.22em]">
-              Platform
-            </p>
-            <h2 className="mt-2 font-display text-[1.65rem] leading-[0.95] tracking-tight text-brand-deep sm:mt-2.5 sm:text-4xl lg:text-[2.6rem]">
-              {heading}
-            </h2>
-            <div
-              className="animate-draw-line mt-3 h-[3px] w-12 bg-gradient-to-r from-accent via-brand to-transparent sm:mt-3.5 sm:w-16"
-              aria-hidden
-            />
-            <ReadMoreText
-              text={description}
-              wordLimit={18}
-              className="mt-3.5 text-[13px] leading-relaxed text-muted sm:mt-5 sm:text-base"
-            />
+          <div className="animate-fade-up grid items-center gap-5 sm:gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+            <div className="max-w-3xl">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent sm:text-xs sm:tracking-[0.22em]">
+                Platform
+              </p>
+              <h2 className="mt-2 font-display text-[1.65rem] leading-[0.95] tracking-tight text-brand-deep sm:mt-2.5 sm:text-4xl lg:text-[2.6rem]">
+                {heading}
+              </h2>
+              <div
+                className="animate-draw-line mt-3 h-[3px] w-12 bg-gradient-to-r from-accent via-brand to-transparent sm:mt-3.5 sm:w-16"
+                aria-hidden
+              />
+              <ReadMoreText
+                text={description}
+                wordLimit={18}
+                className="mt-3.5 text-[13px] leading-relaxed text-muted sm:mt-5 sm:text-base"
+              />
+            </div>
+
+            <div className="relative aspect-[16/9] w-full overflow-hidden lg:max-h-[13.5rem]">
+              <Image
+                src={imageSrc}
+                alt="Using a digital platform to access agri commodity markets from the field"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover"
+              />
+              <div
+                className="absolute inset-0 bg-[linear-gradient(160deg,rgba(26,63,115,0.1)_0%,transparent_42%,rgba(26,63,115,0.38)_100%)]"
+                aria-hidden
+              />
+              <div
+                className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-accent via-brand to-transparent"
+                aria-hidden
+              />
+            </div>
           </div>
 
           <div className="mt-6 border-t border-line pt-5 sm:mt-10 sm:pt-8 lg:mt-12 lg:pt-9">

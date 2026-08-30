@@ -5,8 +5,6 @@ export const SITE_URL = "https://agrirely.com";
 export const SITE_LOGO = "/images/logo.png";
 export const SITE_LOGO_LIGHT = "/images/logo-light.png";
 
-export const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=2400&q=80";
+export const HERO_IMAGE = "/images/home/hero.jpg";
 
-export const ABOUT_IMAGE =
-  "https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&w=1600&q=80";
+export const ABOUT_IMAGE = "/images/about-connect.jpg";

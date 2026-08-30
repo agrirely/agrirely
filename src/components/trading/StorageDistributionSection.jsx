@@ -1,9 +1,11 @@
+import Image from "next/image";
 import ReadMoreText from "@/components/ui/ReadMoreText";
 import { tradingContent } from "@/data/tradingContent";
 
 export default function StorageDistributionSection({ data }) {
-  const { heading, storage, distribution } =
+  const { heading, storage, distribution, image } =
     data ?? tradingContent.storageDistribution;
+  const imageSrc = image || "/images/trading/storage-distribution.jpg";
 
   const blocks = [storage, distribution];
 
@@ -24,17 +26,37 @@ export default function StorageDistributionSection({ data }) {
 
       <div className="relative px-5 py-10 sm:px-8 sm:py-12 lg:px-10 lg:py-14">
         <div className="mx-auto w-full max-w-7xl">
-          <div className="animate-fade-up max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-              Logistics
-            </p>
-            <h2 className="mt-2.5 font-display text-[1.75rem] leading-[0.95] tracking-tight text-brand-deep sm:text-4xl lg:text-[2.6rem]">
-              {heading}
-            </h2>
-            <div
-              className="animate-draw-line mt-3.5 h-[3px] w-16 bg-gradient-to-r from-accent via-brand to-transparent"
-              aria-hidden
-            />
+          <div className="animate-fade-up grid items-center gap-5 sm:gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+            <div className="max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+                Logistics
+              </p>
+              <h2 className="mt-2.5 font-display text-[1.75rem] leading-[0.95] tracking-tight text-brand-deep sm:text-4xl lg:text-[2.6rem]">
+                {heading}
+              </h2>
+              <div
+                className="animate-draw-line mt-3.5 h-[3px] w-16 bg-gradient-to-r from-accent via-brand to-transparent"
+                aria-hidden
+              />
+            </div>
+
+            <div className="relative aspect-[16/9] w-full overflow-hidden lg:max-h-[13.5rem]">
+              <Image
+                src={imageSrc}
+                alt="Agricultural warehouse, silos, and trucks ready for storage and distribution"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover"
+              />
+              <div
+                className="absolute inset-0 bg-[linear-gradient(160deg,rgba(26,63,115,0.1)_0%,transparent_42%,rgba(26,63,115,0.38)_100%)]"
+                aria-hidden
+              />
+              <div
+                className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-accent via-brand to-transparent"
+                aria-hidden
+              />
+            </div>
           </div>
 
           <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-5 lg:mt-12 lg:grid-cols-2 lg:gap-6">

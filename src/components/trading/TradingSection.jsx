@@ -1,14 +1,13 @@
 import Image from "next/image";
 import ReadMoreText from "@/components/ui/ReadMoreText";
 import { tradingContent } from "@/data/tradingContent";
-import { ABOUT_IMAGE } from "@/lib/constants";
 
 const delays = ["delay-1", "delay-2", "delay-3"];
 
 export default function TradingSection({ data }) {
   const { hero, trading, globalTrading, domesticTrading } =
     data ?? tradingContent;
-  const imageSrc = trading?.image || ABOUT_IMAGE;
+  const imageSrc = trading?.image || "/images/trading/trading.jpg";
 
   return (
     <section className="relative isolate overflow-hidden">
@@ -60,7 +59,7 @@ export default function TradingSection({ data }) {
             <div className="animate-fade-up delay-2 relative aspect-[16/9] w-full overflow-hidden lg:max-h-[13.5rem]">
               <Image
                 src={imageSrc}
-                alt="Agricultural commodities prepared for global trade"
+                alt="Agricultural commodities ready for export, import, and global trade"
                 fill
                 priority
                 sizes="(max-width: 1024px) 100vw, 40vw"

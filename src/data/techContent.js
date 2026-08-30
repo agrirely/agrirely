@@ -13,8 +13,7 @@ export const techContent = {
         "The company deploys and advocates the use of digital tools such as artificial intelligence, sensors, drones, and automation to enable data-driven decision-making. These technologies optimize the use of critical resources such as water and fertilizers, improve productivity, and increase crop yields, delivering tangible benefits to farmers.",
       description2:
         "AgriRely's overarching objective is to build a more resilient, efficient, and sustainable food system by transforming traditional agriculture into a technology-enabled, data-driven industry.",
-      image:
-        "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=2400&q=80",
+      image: "/images/tech/overview.jpg",
     },
   
     farmerEquipment: {
@@ -23,12 +22,14 @@ export const techContent = {
         "Through its strategic partnerships, AgriRely supports farmers in identifying and adopting appropriate farm equipment and machinery across all stages of cultivation. This includes a wide range of tools — from basic implements to advanced tractors and drone-based solutions — covering land preparation (rotavators, cultivators), planting (seed drills, transplanters), crop management (sprayers, weeders, mulch layers), and harvesting (reapers, combine harvesters).",
       description2:
         "Driving the adoption of modern trends and innovations — such as automation, drone technology, energy-efficient and electric machinery, and data-driven farming practices — is a key pillar of AgriRely's Impact agenda.",
+      image: "/images/tech/equipment.jpg",
     },
   
     tradingPlatform: {
       heading: "Trading Platform",
       description:
         "AgriRely is building a comprehensive agriculture commodities trading platform that integrates market access, operational efficiency, transparency, risk management, and advanced technology enablement — designed to support efficient, secure, and sustainable agri-trade while delivering value to farmers, buyers, and ecosystem partners.",
+      image: "/images/tech/trading-platform.jpg",
       keyAttributes: [
         {
           title: "Market Access & Liquidity",

@@ -5,6 +5,8 @@ import {
   upsertPage,
 } from "@/services/pageContent.service";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(request, { params }) {
   const { error } = await requireAdmin(request);
   if (error) return error;

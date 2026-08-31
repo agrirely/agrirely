@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/auth";
 import { createInquiry, listInquiries } from "@/services/inquiry.service";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(request) {
   const { error } = await requireAdmin(request);
   if (error) return error;

@@ -6,6 +6,8 @@ import {
 import { loginAdmin } from "@/services/auth.service";
 import { assertEmail, assertPassword } from "@/validations/auth";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(request) {
   try {
     const body = await request.json();

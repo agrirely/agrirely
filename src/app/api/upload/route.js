@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/auth";
 import { getImageKit } from "@/lib/imagekit";
 
+export const dynamic = "force-dynamic";
+
 const MAX_BYTES = 8 * 1024 * 1024; // 8 MB
 const ALLOWED_TYPES = new Set([
   "image/jpeg",

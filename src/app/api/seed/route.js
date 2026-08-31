@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/auth";
 import { seedAllPages } from "@/services/pageContent.service";
 
+export const dynamic = "force-dynamic";
+
 export async function POST(request) {
   const { error } = await requireAdmin(request);
   if (error) return error;

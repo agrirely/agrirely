@@ -5,6 +5,8 @@ import {
   deleteSection,
 } from "@/services/pageContent.service";
 
+export const dynamic = "force-dynamic";
+
 export async function PUT(request, { params }) {
   const { error } = await requireAdmin(request);
   if (error) return error;

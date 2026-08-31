@@ -5,13 +5,13 @@ export const advisoryContent = {
       heading: "Advisory Services",
       description:
         "AgriRely's advisory services for the agricultural sector deliver expert guidance and practical support across the entire value chain—from crop production and farm management to market access and sales. These services are tailored to the specific needs of farmers, traders, and buyers, enabling informed decision-making, operational efficiency, and sustainable growth.",
-      image: "/images/advisory/hero.jpg",
+      image: "https://ik.imagekit.io/sj0lcvhqw7/agrirely/images/advisory/hero.jpg",
     },  
     farmersAdvisory: {
       heading: "Advisory Services for Farmers",
       description:
         "AgriRely's farmer-focused advisory offerings are designed to enhance productivity, sustainability, and profitability:",
-      image: "/images/advisory/farmers.jpg",
+      image: "https://ik.imagekit.io/sj0lcvhqw7/agrirely/images/advisory/farmers.jpg",
       services: [
         {
           title: "Production and Technology",
@@ -45,7 +45,7 @@ export const advisoryContent = {
       heading: "Advisory Services for Traders and Buyers",
       description:
         "AgriRely's advisory services for traders and buyers focus on building efficient, transparent, and reliable supply chains:",
-      image: "/images/advisory/traders-buyers.jpg",
+      image: "https://ik.imagekit.io/sj0lcvhqw7/agrirely/images/advisory/traders-buyers.jpg",
       services: [
         {
           title: "Sourcing and Procurement",

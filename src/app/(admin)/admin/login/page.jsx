@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useState } from "react";
+import { SITE_LOGO } from "@/lib/constants";
 
 function AdminLoginForm() {
   const router = useRouter();
@@ -52,7 +53,7 @@ function AdminLoginForm() {
 
         <div className="flex flex-col items-start gap-3">
           <Image
-            src="/images/logo.png"
+            src={SITE_LOGO}
             alt="AgriRely"
             width={160}
             height={48}

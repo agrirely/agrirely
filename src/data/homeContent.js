@@ -6,7 +6,7 @@ export const homeContent = {
       tagline: "Source Fresh – Deliver Fresh",
       description:
         "Connecting producers and markets worldwide through origination, trading, processing, and distribution — built for freshness at every step.",
-      image: "/images/home/hero.jpg",
+      image: "https://ik.imagekit.io/sj0lcvhqw7/agrirely/images/home/hero.jpg",
     },
   
     whoWeAre: {
@@ -15,7 +15,7 @@ export const homeContent = {
         "AgriRely is a horticulture and agro-commodity market linkage company with offices in Delhi NCR, Pune, and Mumbai. We connect crop producers and consumers worldwide through our integrated capabilities in origination, trading, processing, and distribution, while also offering farmer services and risk management solutions.",
       description2:
         "Operating through a globally integrated platform, we source, store, trade, process, and distribute a diverse range of crops. Our operations span continents, ensuring that agricultural commodities move seamlessly from regions of surplus to markets of demand.",
-      image: "/images/home/who-we-are.jpg",
+      image: "https://ik.imagekit.io/sj0lcvhqw7/agrirely/images/home/who-we-are.jpg",
     },
   
     whatWeDo: {
@@ -26,7 +26,7 @@ export const homeContent = {
         "By efficiently sourcing, processing, and distributing agro and finished products from areas of abundance to regions of high demand, we ensure a consistent, reliable, and cost-efficient supply chain.",
       description3:
         "Our competitive edge lies in leveraging physical and labor arbitrage opportunities in low-cost origin countries and capitalizing on economies of scale — through a resilient, end-to-end supply chain system fully integrated with a robust global logistics strategy.",
-      image: "/images/home/what-we-do.jpg",
+      image: "https://ik.imagekit.io/sj0lcvhqw7/agrirely/images/home/what-we-do.jpg",
     },
   
     globalReach: {
@@ -110,7 +110,7 @@ export const homeContent = {
         "Whether in global trade or domestic operations, freshness, quality, and integrity guide every aspect of what we do.",
       description2:
         "Domestically, we have built a strong pan-India network backed by efficient logistics infrastructure, partnering closely with farmers on risk management, soil health, and access to new and emerging supply chains.",
-      image: "/images/home/philosophy.jpg",
+      image: "https://ik.imagekit.io/sj0lcvhqw7/agrirely/images/home/philosophy.jpg",
     },
   
     ourPromise: {

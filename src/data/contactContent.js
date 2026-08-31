@@ -6,7 +6,7 @@ export const contactContent = {
       subheading: "How can we help?",
       description:
         "We are here to assist you with any questions about our products and services, provide support, or share more about how we are making a meaningful difference. We would be delighted to hear from you.",
-      image: "/images/contact/hero.jpg",
+      image: "https://ik.imagekit.io/sj0lcvhqw7/agrirely/images/contact/hero.jpg",
     },
   
     reachUs: {
@@ -15,7 +15,7 @@ export const contactContent = {
       india: "Delhi NCR, Mumbai",
       corporateHQ: "Pune, India",
       email: "info@agrirely.com",
-      image: "/images/contact/reach-us.jpg",
+      image: "https://ik.imagekit.io/sj0lcvhqw7/agrirely/images/contact/reach-us.jpg",
     },
   
     otherWaysToConnect: {

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { SITE_LOGO } from "@/lib/constants";
 
 const pageLinks = [
   { pageKey: "home", title: "Home" },
@@ -81,7 +82,7 @@ export default function AdminSidebar() {
       <div className="relative border-b border-line px-4 py-5">
         <Link href="/admin" className="flex flex-col gap-2">
           <Image
-            src="/images/logo.png"
+            src={SITE_LOGO}
             alt="AgriRely"
             width={148}
             height={44}

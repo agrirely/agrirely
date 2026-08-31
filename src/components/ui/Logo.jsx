@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { SITE_LOGO, SITE_LOGO_LIGHT } from "@/lib/constants";
 
 export default function Logo({
   href = "/",
@@ -16,7 +17,7 @@ export default function Logo({
       aria-label="AgriRely home"
     >
       <Image
-        src={light ? "/images/logo-light.png" : "/images/logo.png"}
+        src={light ? SITE_LOGO_LIGHT : SITE_LOGO}
         alt="AgriRely"
         width={width}
         height={height}

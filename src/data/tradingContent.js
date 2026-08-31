@@ -13,7 +13,7 @@ export const tradingContent = {
         "AgriRely connects crop producers and consumers worldwide through its integrated capabilities in origination, trading, processing, and distribution. Operating on a globally integrated platform, we source, store, trade, process, and distribute a diverse range of agricultural commodities and value-added agri products. Our multi-continent presence ensures the efficient movement of commodities from regions of surplus to markets of demand.",
       description2:
         "AgriRely follows a three-pronged trading model designed to ensure deep market penetration and extensive reach.",
-      image: "/images/trading/trading.jpg",
+      image: "https://ik.imagekit.io/sj0lcvhqw7/agrirely/images/trading/trading.jpg",
     },
   
     globalTrading: {
@@ -49,12 +49,12 @@ export const tradingContent = {
         "AgriRely, through its Contract Farming module, supports the food processing industry by ensuring reliable supply, adding value across the agricultural value chain, and integrating small and marginal farmers into modern, efficient supply chains. This approach enhances farm productivity, improves quality, and increases overall profitability for farmers.",
       description2:
         "Under formal or informal contractual arrangements, AgriRely provides farmers with quality inputs, agronomic support, and technical guidance, while committing to procure their produce at pre-agreed prices, quantities, and quality standards. By directly linking farmers to end markets, AgriRely reduces dependence on intermediaries, ensures assured offtake for producers, and enables processors to access consistent, high-quality supply at competitive prices.",
-      image: "/images/trading/contract-farming.jpg",
+      image: "https://ik.imagekit.io/sj0lcvhqw7/agrirely/images/trading/contract-farming.jpg",
     },
   
     storageDistribution: {
       heading: "Storage & Distribution",
-      image: "/images/trading/storage-distribution.jpg",
+      image: "https://ik.imagekit.io/sj0lcvhqw7/agrirely/images/trading/storage-distribution.jpg",
       storage: {
         title: "Storage",
         description:
@@ -75,7 +75,7 @@ export const tradingContent = {
       heading: "Processing & Packaging",
       description:
         "AgriRely offers end-to-end processing and packaging services for agricultural produce across Indian and global markets — focusing on value addition through cleaning, sorting, processing into ingredients or ready-to-eat products, and protective, market-aligned packaging solutions.",
-      image: "/images/trading/processing-packaging.jpg",
+      image: "https://ik.imagekit.io/sj0lcvhqw7/agrirely/images/trading/processing-packaging.jpg",
       processingServices: [
         {
           title: "Cleaning & Sorting",

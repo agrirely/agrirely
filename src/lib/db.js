@@ -1,4 +1,13 @@
+import dns from "dns";
 import mongoose from "mongoose";
+
+// Windows/local DNS often cannot resolve mongodb+srv SRV records.
+try {
+  dns.setDefaultResultOrder("ipv4first");
+  dns.setServers(["8.8.8.8", "1.1.1.1", ...dns.getServers()]);
+} catch {
+  /* ignore */
+}
 
 const MONGODB_URI = process.env.MONGODB_URI;
 

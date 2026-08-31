@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import ImageUploadField from "@/components/admin/ImageUploadField";
-import { ABOUT_IMAGE } from "@/lib/constants";
+import { ABOUT_IMAGE, IK_BASE } from "@/lib/constants";
 
 function humanizeKey(key) {
   return String(key)
@@ -13,26 +13,26 @@ function humanizeKey(key) {
 
 /** Sections that should always expose an ImageKit upload field */
 const SECTION_IMAGE_DEFAULTS = {
-  "home/hero": "/images/home/hero.jpg",
-  "home/whoWeAre": "/images/home/who-we-are.jpg",
-  "home/whatWeDo": "/images/home/what-we-do.jpg",
-  "home/philosophy": "/images/home/philosophy.jpg",
+  "home/hero": `${IK_BASE}/images/home/hero.jpg`,
+  "home/whoWeAre": `${IK_BASE}/images/home/who-we-are.jpg`,
+  "home/whatWeDo": `${IK_BASE}/images/home/what-we-do.jpg`,
+  "home/philosophy": `${IK_BASE}/images/home/philosophy.jpg`,
   "about-us/intro": ABOUT_IMAGE,
-  "trading-services/trading": "/images/trading/trading.jpg",
-  "trading-services/contractFarming": "/images/trading/contract-farming.jpg",
+  "trading-services/trading": `${IK_BASE}/images/trading/trading.jpg`,
+  "trading-services/contractFarming": `${IK_BASE}/images/trading/contract-farming.jpg`,
   "trading-services/storageDistribution":
-    "/images/trading/storage-distribution.jpg",
+    `${IK_BASE}/images/trading/storage-distribution.jpg`,
   "trading-services/processingPackaging":
-    "/images/trading/processing-packaging.jpg",
-  "agri-farmer-tech/overview": "/images/tech/overview.jpg",
-  "agri-farmer-tech/farmerEquipment": "/images/tech/equipment.jpg",
-  "agri-farmer-tech/tradingPlatform": "/images/tech/trading-platform.jpg",
-  "advisory-services/hero": "/images/advisory/hero.jpg",
-  "advisory-services/farmersAdvisory": "/images/advisory/farmers.jpg",
+    `${IK_BASE}/images/trading/processing-packaging.jpg`,
+  "agri-farmer-tech/overview": `${IK_BASE}/images/tech/overview.jpg`,
+  "agri-farmer-tech/farmerEquipment": `${IK_BASE}/images/tech/equipment.jpg`,
+  "agri-farmer-tech/tradingPlatform": `${IK_BASE}/images/tech/trading-platform.jpg`,
+  "advisory-services/hero": `${IK_BASE}/images/advisory/hero.jpg`,
+  "advisory-services/farmersAdvisory": `${IK_BASE}/images/advisory/farmers.jpg`,
   "advisory-services/tradersBuyersAdvisory":
-    "/images/advisory/traders-buyers.jpg",
-  "contact-us/hero": "/images/contact/hero.jpg",
-  "contact-us/reachUs": "/images/contact/reach-us.jpg",
+    `${IK_BASE}/images/advisory/traders-buyers.jpg`,
+  "contact-us/hero": `${IK_BASE}/images/contact/hero.jpg`,
+  "contact-us/reachUs": `${IK_BASE}/images/contact/reach-us.jpg`,
 };
 
 function ensureSectionImageField(pageKey, sectionKey, data) {

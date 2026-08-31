@@ -1,7 +1,15 @@
+import dns from "dns";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 import mongoose from "mongoose";
+
+try {
+  dns.setDefaultResultOrder("ipv4first");
+  dns.setServers(["8.8.8.8", "1.1.1.1", ...dns.getServers()]);
+} catch {
+  /* ignore */
+}
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -22,7 +30,10 @@ async function loadExport(relPath, exportName) {
 }
 
 async function main() {
-  const uri = process.env.MONGODB_URI || "mongodb://localhost:27017/agrirely";
+  const uri = process.env.MONGODB_URI;
+  if (!uri) {
+    throw new Error("Missing MONGODB_URI in .env.local");
+  }
   const overwrite = process.argv.includes("--overwrite");
 
   const homeContent = await loadExport("src/data/homeContent.js", "homeContent");

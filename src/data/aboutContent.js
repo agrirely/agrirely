@@ -14,7 +14,7 @@ export const aboutContent = {
       "We connect crop producers and consumers worldwide through our integrated capabilities in origination, trading, processing, and distribution, while also offering farmer services and risk management solutions.",
     description2:
       "Operating through a globally integrated platform, we source, store, trade, process, and distribute a diverse range of crops. Our operations span continents, ensuring that agricultural commodities move seamlessly from regions of surplus to markets of demand.",
-    image: "/images/about-connect.jpg",
+    image: "https://ik.imagekit.io/sj0lcvhqw7/agrirely/images/about-connect.jpg",
   },
 
   whatWeDo: {

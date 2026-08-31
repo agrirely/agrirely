@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "eslint",
     "seed": "node scripts/seed.mjs",
-    "seed:overwrite": "node scripts/seed.mjs --overwrite"
+    "seed:overwrite": "node scripts/seed.mjs --overwrite",
+    "migrate": "node scripts/migrate.mjs",
+    "migrate:dry": "node scripts/migrate.mjs --dry-run",
+    "migrate:export": "node scripts/migrate.mjs --export-only"
   },
   "dependencies": {
     "@imagekit/nodejs": "^7.10.0",

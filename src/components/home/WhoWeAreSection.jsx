@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BrandName from "@/components/ui/BrandName";
 import ReadMoreText from "@/components/ui/ReadMoreText";
 import { homeContent } from "@/data/homeContent";
 
@@ -25,8 +26,8 @@ export default function WhoWeAreSection({ data }) {
       <div className="relative px-5 py-9 sm:px-8 sm:py-14 lg:px-12 lg:py-16">
         <div className="container-page grid items-center gap-5 sm:gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           <div className="animate-fade-up max-w-xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-              About AgriRely
+            <p className="text-xs font-semibold tracking-[0.18em] text-accent">
+              About <BrandName />
             </p>
             <h2 className="mt-2.5 font-display text-[1.75rem] leading-[0.95] tracking-tight text-brand-deep sm:mt-3 sm:text-4xl lg:text-[2.75rem]">
               {heading}

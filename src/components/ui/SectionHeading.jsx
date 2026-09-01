@@ -1,3 +1,5 @@
+import BrandName, { isBrandName } from "@/components/ui/BrandName";
+
 export default function SectionHeading({
   eyebrow,
   heading,
@@ -7,16 +9,21 @@ export default function SectionHeading({
 }) {
   const alignment =
     align === "center" ? "mx-auto text-center items-center" : "items-start text-left";
+  const eyebrowIsBrand = isBrandName(eyebrow);
+  const headingIsBrand = isBrandName(heading);
+  const eyebrowTone = light ? "text-accent-soft" : "text-accent";
 
   return (
     <div className={`flex max-w-3xl flex-col gap-4 ${alignment}`}>
       {eyebrow ? (
         <p
-          className={`text-xs font-semibold uppercase tracking-[0.22em] ${
-            light ? "text-accent-soft" : "text-accent"
+          className={`text-xs font-semibold ${
+            eyebrowIsBrand
+              ? `tracking-[0.18em] ${eyebrowTone}`
+              : `uppercase tracking-[0.22em] ${eyebrowTone}`
           }`}
         >
-          {eyebrow}
+          {eyebrowIsBrand ? <BrandName /> : eyebrow}
         </p>
       ) : null}
       <h2
@@ -24,7 +31,7 @@ export default function SectionHeading({
           light ? "text-white" : "text-brand-deep"
         }`}
       >
-        {heading}
+        {headingIsBrand ? <BrandName /> : heading}
       </h2>
       <span
         className={`h-px w-16 bg-accent animate-draw-line ${

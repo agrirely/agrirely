@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useState } from "react";
-import { SITE_LOGO } from "@/lib/constants";
+import { SITE_LOGO, SITE_NAME } from "@/lib/constants";
 
 function AdminLoginForm() {
   const router = useRouter();
@@ -54,7 +54,7 @@ function AdminLoginForm() {
         <div className="flex flex-col items-start gap-3">
           <Image
             src={SITE_LOGO}
-            alt="AgriRely"
+            alt={SITE_NAME}
             width={160}
             height={48}
             className="h-10 w-auto object-contain"
@@ -65,7 +65,7 @@ function AdminLoginForm() {
               Admin Login
             </h1>
             <p className="mt-1.5 text-sm text-muted">
-              Sign in to manage AgriRely website content.
+              Sign in to manage {SITE_NAME} website content.
             </p>
           </div>
         </div>
@@ -80,7 +80,7 @@ function AdminLoginForm() {
               autoComplete="username"
               required
               className="rounded-lg border border-line bg-background px-3.5 py-2.5 text-sm text-foreground outline-none transition placeholder:text-muted/70 focus:border-brand focus:ring-2 focus:ring-brand/15"
-              placeholder="AgriRely@admin.com"
+              placeholder={`${SITE_NAME}@admin.com`}
             />
           </label>
           <label className="flex flex-col gap-1.5 text-sm font-medium text-brand-deep">

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BrandName from "@/components/ui/BrandName";
 import ReadMoreText from "@/components/ui/ReadMoreText";
 import { tradingContent } from "@/data/tradingContent";
 
@@ -24,8 +25,8 @@ export default function TradingSection({ data }) {
       <div className="relative px-5 py-7 sm:px-8 sm:py-9 lg:px-10 lg:py-10">
         <div className="mx-auto w-full max-w-7xl">
           <div className="animate-fade-up max-w-4xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-              AgriRely
+            <p className="text-xs font-semibold tracking-[0.18em] text-accent">
+              <BrandName />
             </p>
             <h1 className="mt-2 font-display text-[clamp(2rem,6.5vw,3.5rem)] leading-[0.92] tracking-tight text-brand-deep">
               {hero.heading}

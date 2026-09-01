@@ -1,4 +1,6 @@
 import Image from "next/image";
+import BrandName from "@/components/ui/BrandName";
+import SocialIcons from "@/components/ui/SocialIcons";
 import { contactContent } from "@/data/contactContent";
 
 const locationItems = [
@@ -7,7 +9,7 @@ const locationItems = [
   { label: "Corporate HQ", key: "corporateHQ" },
 ];
 
-export default function ReachUsSection({ data }) {
+export default function ReachUsSection({ data, socialLinks = [] }) {
   const { hero, reachUs } = data ?? contactContent;
   const heroImage = hero?.image || "/images/contact/hero.jpg";
   const reachImage = reachUs?.image || "/images/contact/reach-us.jpg";
@@ -27,8 +29,8 @@ export default function ReachUsSection({ data }) {
       <div className="relative px-5 py-7 sm:px-8 sm:py-9 lg:px-10 lg:py-10">
         <div className="mx-auto w-full max-w-7xl">
           <div className="animate-fade-up max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-              AgriRely
+            <p className="text-xs font-semibold tracking-[0.18em] text-accent">
+              <BrandName />
             </p>
             <h1 className="mt-2 font-display text-[clamp(2rem,6.5vw,3.5rem)] leading-[0.92] tracking-tight text-brand-deep">
               {hero.heading}
@@ -90,6 +92,19 @@ export default function ReachUsSection({ data }) {
                   />
                   {reachUs.email}
                 </a>
+                {socialLinks.length ? (
+                  <div className="mt-5">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
+                      Social
+                    </p>
+                    <SocialIcons
+                      links={socialLinks}
+                      variant="light"
+                      size="md"
+                      className="mt-2.5"
+                    />
+                  </div>
+                ) : null}
               </div>
 
               <div className="relative aspect-[16/9] w-full overflow-hidden">

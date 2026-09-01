@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BrandName from "@/components/ui/BrandName";
 import ReadMoreText from "@/components/ui/ReadMoreText";
 import { techContent } from "@/data/techContent";
 
@@ -24,8 +25,8 @@ export default function OverviewSection({ data }) {
       <div className="relative px-5 py-6 sm:px-8 sm:py-9 lg:px-10 lg:py-10">
         <div className="mx-auto w-full max-w-7xl">
           <div className="animate-fade-up max-w-4xl">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent sm:text-xs sm:tracking-[0.22em]">
-              AgriRely
+            <p className="text-[11px] font-semibold tracking-[0.18em] text-accent sm:text-xs">
+              <BrandName />
             </p>
             <h1 className="mt-1.5 font-display text-[clamp(1.85rem,8vw,3.5rem)] leading-[0.95] tracking-tight text-brand-deep sm:mt-2 sm:leading-[0.92]">
               {hero.heading}

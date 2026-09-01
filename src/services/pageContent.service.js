@@ -33,9 +33,17 @@ export async function upsertPage({ pageKey, title, sections }) {
 
 export async function updateSection(pageKey, sectionKey, sectionData) {
   await connectDB();
-  const page = await PageContent.findOne({ pageKey });
+  let page = await PageContent.findOne({ pageKey });
   if (!page) {
-    throw new Error(`Page not found: ${pageKey}`);
+    const fallback = allPages.find((item) => item.pageKey === pageKey);
+    if (!fallback) {
+      throw new Error(`Page not found: ${pageKey}`);
+    }
+    page = await PageContent.create({
+      pageKey: fallback.pageKey,
+      title: fallback.title,
+      sections: fallback.sections,
+    });
   }
 
   page.sections = {

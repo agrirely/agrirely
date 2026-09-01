@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SITE_LOGO, SITE_LOGO_LIGHT } from "@/lib/constants";
+import { SITE_LOGO, SITE_LOGO_LIGHT, SITE_NAME } from "@/lib/constants";
 
 export default function Logo({
   href = "/",
@@ -14,11 +14,11 @@ export default function Logo({
     <Link
       href={href}
       className={`inline-flex items-center transition hover:opacity-90 ${className}`}
-      aria-label="AgriRely home"
+      aria-label={`${SITE_NAME} home`}
     >
       <Image
         src={light ? SITE_LOGO_LIGHT : SITE_LOGO}
-        alt="AgriRely"
+        alt={SITE_NAME}
         width={width}
         height={height}
         priority={priority}

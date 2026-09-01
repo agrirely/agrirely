@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { SITE_LOGO } from "@/lib/constants";
+import { SITE_LOGO, SITE_NAME } from "@/lib/constants";
 
 const pageLinks = [
   { pageKey: "home", title: "Home" },
@@ -14,6 +14,8 @@ const pageLinks = [
   { pageKey: "agri-farmer-tech", title: "Agri & Farmer Tech" },
   { pageKey: "advisory-services", title: "Advisory Services" },
   { pageKey: "nav", title: "Navigation" },
+  { pageKey: "social", title: "Social Media" },
+  { pageKey: "favicon", title: "Favicon" },
 ];
 
 const topLinks = [
@@ -27,6 +29,57 @@ const topLinks = [
           d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1v-9.5Z"
           stroke="currentColor"
           strokeWidth="1.75"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    href: "/admin/social",
+    label: "Social Media",
+    match: (path) => path.startsWith("/admin/social"),
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
+        <path
+          d="M7.5 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM16.5 8.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM18.5 18.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
+          stroke="currentColor"
+          strokeWidth="1.75"
+        />
+        <path
+          d="M9.6 9.4 14.8 6.8M9.4 11.8l7.2 4.4"
+          stroke="currentColor"
+          strokeWidth="1.75"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    href: "/admin/favicon",
+    label: "Favicon",
+    match: (path) => path.startsWith("/admin/favicon"),
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
+        <rect
+          x="4.5"
+          y="5.5"
+          width="15"
+          height="13"
+          rx="2"
+          stroke="currentColor"
+          strokeWidth="1.75"
+        />
+        <path
+          d="M4.5 9.5h15"
+          stroke="currentColor"
+          strokeWidth="1.75"
+        />
+        <circle cx="8" cy="7.25" r="0.7" fill="currentColor" />
+        <path
+          d="M10.8 15.4 12.4 13l1.7 2.1 1.5-1.9 2.1 2.7"
+          stroke="currentColor"
+          strokeWidth="1.6"
+          strokeLinecap="round"
           strokeLinejoin="round"
         />
       </svg>
@@ -83,7 +136,7 @@ export default function AdminSidebar() {
         <Link href="/admin" className="flex flex-col gap-2">
           <Image
             src={SITE_LOGO}
-            alt="AgriRely"
+            alt={SITE_NAME}
             width={148}
             height={44}
             className="h-9 w-auto object-contain object-left"

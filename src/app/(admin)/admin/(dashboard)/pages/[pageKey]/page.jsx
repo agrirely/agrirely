@@ -40,6 +40,16 @@ const PAGE_META = {
     description: "Header navigation links and labels.",
     accent: "bg-background text-muted ring-line",
   },
+  social: {
+    label: "Sitewide",
+    description: "Social media profile URLs for site icons.",
+    accent: "bg-accent/15 text-brand-deep ring-accent/30",
+  },
+  favicon: {
+    label: "Sitewide",
+    description: "Browser tab icon upload, remove, and active state.",
+    accent: "bg-brand/10 text-brand-deep ring-brand/25",
+  },
 };
 
 function humanizeKey(key) {

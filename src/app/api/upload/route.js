@@ -11,7 +11,12 @@ const ALLOWED_TYPES = new Set([
   "image/webp",
   "image/gif",
   "image/avif",
+  "image/svg+xml",
+  "image/x-icon",
+  "image/vnd.microsoft.icon",
 ]);
+
+const ALLOWED_EXTENSIONS = /\.(jpe?g|png|webp|gif|avif|svg|ico)$/i;
 
 export async function POST(request) {
   const { error } = await requireAdmin(request);
@@ -39,11 +44,13 @@ export async function POST(request) {
       );
     }
 
-    if (file.type && !ALLOWED_TYPES.has(file.type)) {
+    const typeOk = !file.type || ALLOWED_TYPES.has(file.type);
+    const nameOk = ALLOWED_EXTENSIONS.test(file.name || "");
+    if (!typeOk && !nameOk) {
       return NextResponse.json(
         {
           success: false,
-          error: "Only JPEG, PNG, WebP, GIF, or AVIF images are allowed",
+          error: "Only JPEG, PNG, WebP, GIF, AVIF, SVG, or ICO files are allowed",
         },
         { status: 400 }
       );

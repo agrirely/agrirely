@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button";
+import BrandName, { isBrandName } from "@/components/ui/BrandName";
 import { homeContent } from "@/data/homeContent";
 
 export default function HeroSection({ data }) {
@@ -27,7 +28,7 @@ export default function HeroSection({ data }) {
       <div className="container-page relative z-10 flex flex-1 flex-col justify-end px-5 pb-10 pt-14 sm:justify-center sm:px-8 sm:py-20 lg:px-12 lg:py-24">
         <div className="max-w-3xl">
           <h1 className="animate-fade-up font-display text-[clamp(2.5rem,12vw,7.5rem)] leading-[0.9] tracking-[-0.03em] text-white">
-            {title}
+            {isBrandName(title) ? <BrandName /> : title}
           </h1>
 
           <div
@@ -56,7 +57,7 @@ export default function HeroSection({ data }) {
               variant="secondary"
               className="w-full !px-3 !py-2.5 !text-[13px] !border-white/35 !bg-white/10 !text-white hover:!bg-white/20 sm:w-auto sm:!px-5 sm:!py-3 sm:!text-sm"
             >
-              Discover AgriRely
+              Discover <BrandName />
             </Button>
           </div>
         </div>

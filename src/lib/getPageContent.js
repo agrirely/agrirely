@@ -1,5 +1,13 @@
 import { getPageByKey } from "@/services/pageContent.service";
 import { getStaticPageSections } from "@/data/allPages";
+import {
+  normalizeSocialLinks,
+  socialContent,
+} from "@/data/socialContent";
+import {
+  faviconContent,
+  getActiveFaviconFromItems,
+} from "@/data/faviconContent";
 
 /**
  * Fetch page sections from MongoDB (falls back to static data files).
@@ -19,4 +27,24 @@ export async function getPageContent(pageKey) {
     throw new Error(`No content found for pageKey: ${pageKey}`);
   }
   return fallback;
+}
+
+export async function getSocialLinks() {
+  try {
+    const sections = await getPageContent("social");
+    return normalizeSocialLinks(sections?.links);
+  } catch (error) {
+    console.error("[getSocialLinks]", error.message);
+    return normalizeSocialLinks(socialContent.links);
+  }
+}
+
+export async function getActiveFaviconUrl() {
+  try {
+    const sections = await getPageContent("favicon");
+    return getActiveFaviconFromItems(sections?.items);
+  } catch (error) {
+    console.error("[getActiveFaviconUrl]", error.message);
+    return getActiveFaviconFromItems(faviconContent.items);
+  }
 }

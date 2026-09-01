@@ -26,6 +26,50 @@ const cards = [
     ),
   },
   {
+    href: "/admin/social",
+    title: "Social Media",
+    description: "Set LinkedIn, Instagram, and other profile URLs for site icons.",
+    accent: "from-accent/20 to-sky/25",
+    iconBg: "bg-accent/15 text-brand-deep",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
+        <path
+          d="M7.5 10.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5ZM16.5 8.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4ZM18.5 18.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"
+          stroke="currentColor"
+          strokeWidth="1.75"
+        />
+        <path
+          d="M9.6 9.4 14.8 6.8M9.4 11.8l7.2 4.4"
+          stroke="currentColor"
+          strokeWidth="1.75"
+          strokeLinecap="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    href: "/admin/favicon",
+    title: "Favicon",
+    description: "Upload, remove, and activate the browser tab icon.",
+    accent: "from-brand/15 to-accent/20",
+    iconBg: "bg-brand/10 text-brand-deep",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5" aria-hidden>
+        <rect
+          x="4.5"
+          y="5.5"
+          width="15"
+          height="13"
+          rx="2"
+          stroke="currentColor"
+          strokeWidth="1.75"
+        />
+        <path d="M4.5 9.5h15" stroke="currentColor" strokeWidth="1.75" />
+        <circle cx="8" cy="7.25" r="0.7" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
     href: "/admin/inquiries",
     title: "Inquiries",
     description: "View contact form submissions.",
@@ -57,7 +101,7 @@ export default function AdminDashboardPage() {
         Manage website page content without changing the public UI.
       </p>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
+      <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
         {cards.map((card) => (
           <Link
             key={card.href}

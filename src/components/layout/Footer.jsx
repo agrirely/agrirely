@@ -1,12 +1,14 @@
 import Link from "next/link";
 import Logo from "@/components/ui/Logo";
+import SocialIcons from "@/components/ui/SocialIcons";
 import { navLinks } from "@/data/navLinks";
 import { SITE_EMAIL, SITE_NAME, SITE_TAGLINE } from "@/lib/constants";
 
 const exploreLinks = navLinks.filter((link) => link.href !== "/contact-us");
 
-export default function Footer() {
+export default function Footer({ socialLinks = [] }) {
   const year = new Date().getFullYear();
+  const hasSocial = socialLinks.length > 0;
 
   return (
     <footer className="relative overflow-hidden bg-brand-deep text-white">
@@ -38,6 +40,19 @@ export default function Footer() {
               Bridging producers and markets through integrated trading,
               technology, and advisory.
             </p>
+            {hasSocial ? (
+              <div className="mt-6">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent-soft">
+                  Follow us
+                </p>
+                <SocialIcons
+                  links={socialLinks}
+                  variant="dark"
+                  size="md"
+                  className="mt-3"
+                />
+              </div>
+            ) : null}
           </div>
 
           <div className="min-w-0">
@@ -82,13 +97,22 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mx-auto mt-10 flex w-full max-w-7xl flex-col gap-2 border-t border-white/10 pt-5 text-xs text-white/45 sm:mt-12 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto mt-10 flex w-full max-w-7xl flex-col gap-4 border-t border-white/10 pt-5 text-xs text-white/45 sm:mt-12 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {SITE_NAME}. All rights reserved.
           </p>
-          <p className="tracking-wide">
-            Global agri trade · Origination · Distribution
-          </p>
+          {hasSocial ? (
+            <SocialIcons
+              links={socialLinks}
+              variant="dark"
+              size="sm"
+              className="sm:justify-end"
+            />
+          ) : (
+            <p className="tracking-wide">
+              Global agri trade · Origination · Distribution
+            </p>
+          )}
         </div>
       </div>
     </footer>

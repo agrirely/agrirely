@@ -43,6 +43,8 @@ async function main() {
   const techContent = await loadExport("src/data/techContent.js", "techContent");
   const advisoryContent = await loadExport("src/data/advisoryContent.js", "advisoryContent");
   const navLinks = await loadExport("src/data/navLinks.js", "navLinks");
+  const socialContent = await loadExport("src/data/socialContent.js", "socialContent");
+  const faviconContent = await loadExport("src/data/faviconContent.js", "faviconContent");
 
   const pages = [
     { pageKey: "home", title: "Home", sections: homeContent },
@@ -52,6 +54,8 @@ async function main() {
     { pageKey: "agri-farmer-tech", title: "Agri & Farmer Tech", sections: techContent },
     { pageKey: "advisory-services", title: "Advisory Services", sections: advisoryContent },
     { pageKey: "nav", title: "Navigation", sections: { links: navLinks } },
+    { pageKey: "social", title: "Social Media", sections: socialContent },
+    { pageKey: "favicon", title: "Favicon", sections: faviconContent },
   ];
 
   console.log(`Connecting to ${uri} ...`);

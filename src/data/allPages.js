@@ -5,6 +5,8 @@ import { tradingContent } from "./tradingContent";
 import { techContent } from "./techContent";
 import { advisoryContent } from "./advisoryContent";
 import { navLinks } from "./navLinks";
+import { socialContent } from "./socialContent";
+import { faviconContent } from "./faviconContent";
 
 /** Seed + fallback source for PageContent documents */
 export const allPages = [
@@ -42,6 +44,16 @@ export const allPages = [
     pageKey: "nav",
     title: "Navigation",
     sections: { links: navLinks },
+  },
+  {
+    pageKey: "social",
+    title: "Social Media",
+    sections: socialContent,
+  },
+  {
+    pageKey: "favicon",
+    title: "Favicon",
+    sections: faviconContent,
   },
 ];
 

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navLinks } from "@/data/navLinks";
+import BrandName from "@/components/ui/BrandName";
 import Button from "@/components/ui/Button";
 
 const primaryLinks = navLinks.filter((link) => link.href !== "/contact-us");
@@ -120,7 +121,9 @@ export default function Navbar() {
                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-brand">
                   Menu
                 </p>
-                <p className="mt-0.5 text-sm text-muted">Explore AgriRely</p>
+                <p className="mt-0.5 text-sm text-muted">
+                  Explore <BrandName />
+                </p>
               </div>
 
               <div className="flex flex-col gap-1">
